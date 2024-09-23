@@ -9,11 +9,18 @@ public class Rotor {
         this.startChar = c;
         
         while(!this.rotate());
+
             
     }
     
     public boolean rotate(){
         //TODO
+        this.rotorValues = this.rotorValues.substring(1,27) + this.rotorValues.charAt(0);
+        if (this.rotorValues.charAt(0) == this.startChar) {
+            return true;
+        } else {
+            return false;
+        }
                
     }
     
