@@ -15,6 +15,9 @@ public class Rotor {
     
     public boolean rotate(){
         //TODO
+        // so im trying to figure out how to utilize the indexOf method
+        //what I think is that we can indexOf the startchar then count till we get there
+        // that way we dont need to compare every time. but i think both work
         this.rotorValues = this.rotorValues.substring(1,27) + this.rotorValues.charAt(0);
         if (this.rotorValues.charAt(0) == this.startChar) {
             return true;
