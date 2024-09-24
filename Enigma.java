@@ -26,6 +26,14 @@ public class Enigma{
         //3) take get char and find the index of it from the outer
         //4) get the index and use it to get the char from the inner
         //5) determine whatever character is in the second and call the rotate to that
+        String result = "";
+        for (int i = 0; i < message.length(); i++) {
+            char eChar = message.charAt(i);
+            //step 1
+            int indexOut = rotors[2].indexOf(eChar);
+            //step 2
+            char charMid = rotors[1].charAt(indexOut);
+
     }
 
 
