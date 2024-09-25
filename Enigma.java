@@ -57,16 +57,15 @@ public class Enigma{
         //5) add and rotate
         String result = "";
         for (int i = 0; i < message.length(); i++) {
-            char dChar = message.charAt(i);
+            char eChar = message.charAt(i);
+            int indexIn = rotors[0].indexOf(eChar);
             //step 1
-            int indexIn = rotors[0].indexOf(dChar);
-            //step 2
             char charOut = rotors[2].charAt(indexIn);
-            //step 3
+            //step 2
             int indexMid = rotors[1].indexOf(charOut);
-            //step 4
+            //step 3
             char charOutAgain = rotors[2].charAt(indexMid);
-            //step 5
+            //step 4
             result += charOutAgain;
             //step 6
             rotors[0].rotate();
