@@ -30,13 +30,13 @@ public class Rotor {
 
     public int indexOf(char c){
         //TODO
-        int indexPoint = indexOf(c);
+        int indexPoint = rotorValues.indexOf(c);
         return indexPoint;
     }
 
     public char charAt(int idx){
         //TODO
-        char charPoint = charAt(idx);
+        char charPoint = rotorValues.charAt(idx);
         return charPoint;
     }
 }
