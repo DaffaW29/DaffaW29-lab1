@@ -26,6 +26,7 @@ public class Enigma{
         //3) take get char and find the index of it from the outer
         //4) get the index and use it to get the char from the inner
         //5) determine whatever character is in the second and call the rotate to that
+        //6) rotate
         String result = "";
         for (int i = 0; i < message.length(); i++) {
             char eChar = message.charAt(i);
@@ -33,13 +34,44 @@ public class Enigma{
             int indexOut = rotors[2].indexOf(eChar);
             //step 2
             char charMid = rotors[1].charAt(indexOut);
-
+            //step 3
+            int indexOutAgain = rotors[2].indexOf(charMid);
+            //step 4
+            char charIn = rotors[0].charAt(indexOutAgain);
+            //step 5
+            result += charIn;
+            //step 6
+            rotors[0].rotate();
+        }
+        return result;
     }
 
 
     
     public String encrypt(String message){
         //TODO
+        //1) find the char on inside
+        //2) take the index of that to get the char outside
+        //3) find that outside character in middle
+        //4) take the index of that middle to get the outside
+        //5) add and rotate
+        String result = "";
+        for (int i = 0; i < message.length(); i++) {
+            char dChar = message.charAt(i);
+            //step 1
+            int indexIn = rotors[0].indexOf(dChar);
+            //step 2
+            char charOut = rotors[2].charAt(indexIn);
+            //step 3
+            int indexMid = rotors[1].indexOf(charOut);
+            //step 4
+            char charOutAgain = rotors[2].charAt(indexMid);
+            //step 5
+            result += charOutAgain;
+            //step 6
+            rotors[0].rotate();
+        }
+        return result;
     }
     
     private void rotate(){
