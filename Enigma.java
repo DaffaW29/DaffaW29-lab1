@@ -41,7 +41,7 @@ public class Enigma{
             //step 5
             result += charIn;
             //step 6
-            rotors[0].rotate();
+            rotate();
         }
         return result;
     }
@@ -68,7 +68,7 @@ public class Enigma{
             //step 4
             result += charOutAgain;
             //step 6
-            rotors[0].rotate();
+            rotate();
         }
         return result;
     }
